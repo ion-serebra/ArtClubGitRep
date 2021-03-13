@@ -1,0 +1,89 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="buttonHandler"
+            type="com.oshaev.artclub.ui.notifications.FirstFragment.FirstFragmentButtonsHandler" />
+    </data>
+
+    <RelativeLayout
+
+        android:id="@+id/firstFragmentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.notifications.FirstFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                android:background="@drawable/background_rect_primary"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                        android:text="Профиль"
+                        android:layout_centerVertical="true"
+                        android:textColor="@android:color/white"
+                        ></TextView>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_settings_black_48dp"
+                        android:background="@android:color/transparent"
+                        android:onClick="@{buttonHandler::onSettingsClicked}"/>
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabMode="fixed"
+            android:background="@drawable/solid_half_corners_rect"
+            app:tabGravity="fill"
+            app:tabTextColor="@android:color/white"
+            app:tabIndicatorFullWidth="false"
+            android:scrollbarStyle="outsideOverlay"
+            android:layout_below="@id/app_bar"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_below="@id/tabs"
+            android:id="@+id/viewpager_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            ></androidx.viewpager.widget.ViewPager>
+
+    </RelativeLayout>
+</layout>

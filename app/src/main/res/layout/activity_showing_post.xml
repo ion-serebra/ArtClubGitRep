@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.home.ShowingPostActivity">
+
+    <Toolbar
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/thin_outline"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Мероприятие"
+            style="@style/AppBarTitleStyle"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            ></TextView>
+
+        </RelativeLayout>
+
+    </Toolbar>
+
+    <include
+        android:id="@+id/includedLayout"
+        layout="@layout/content_showing_post"
+       />
+
+
+
+    <RelativeLayout
+        android:id="@+id/sendCommentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/thin_outline"
+        android:layout_alignParentBottom="true"
+        >
+
+        <EditText
+            android:id="@+id/commentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:maxHeight="130dp"
+            android:textSize="18sp"
+            android:hint="Комментарий"
+            android:layout_marginLeft="@dimen/classic_side_margin"
+            android:layout_marginRight="@dimen/classic_side_margin"
+            android:layout_marginTop="@dimen/message_margin"
+            android:layout_marginBottom="@dimen/message_margin"
+            android:background="@android:color/transparent"
+
+            ></EditText>
+
+        <ImageView
+            android:id="@+id/sendCommentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/smaller_side_margin"
+            android:src="@drawable/ic_send_primary_light_24dp"
+            ></ImageView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

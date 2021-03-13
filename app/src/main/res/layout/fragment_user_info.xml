@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exp"
+            type="String" />
+        
+        <variable
+            name="maxExp"
+            type="String" />
+
+        <variable
+            name="level"
+            type="String" />
+
+        <variable
+            name="user"
+            type="com.oshaev.artclub.User" />
+
+        <variable
+            name="buttonsHandler"
+            type="com.oshaev.artclub.ui.notifications.ProfileFragment.ProfileFragmentButtonsHandler" />
+
+        <variable
+            name="progressMax"
+            type="Integer" />
+
+        <variable
+            name="progress"
+            type="Integer" />
+
+    </data>
+
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.notifications.ProfileFragment">
+
+
+
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="56dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/userAvatarCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            >
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="176dp"
+            android:layout_height="176dp"
+            app:cardCornerRadius="88dp"
+            android:layout_centerInParent="true"
+            app:cardElevation="12dp"
+
+            >
+    <ImageButton
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:id="@+id/userAvatar"
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:src="@drawable/add_photo_selector"
+        android:layout_gravity="center_horizontal"
+        ></ImageButton>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+
+            android:layout_centerInParent="true"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:max="@{progressMax}"
+            android:progress="@{progress}"
+            android:progressDrawable="@drawable/circular_level_progress_bar"
+            >
+        </ProgressBar>
+
+            <TextView
+                android:id="@+id/expTextView"
+                android:layout_below="@id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="12sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@{progress.toString()+'/'+progressMax.toString()}"
+                ></TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/expTextView"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Уровень: "
+                    style="@style/UserInfoTextStyle"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="@{level}"
+                    style="@style/UserInfoTextStyle"
+                    ></TextView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/userAvatarCard"
+            android:layout_centerHorizontal="true"
+            >
+
+
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Имя"
+                style="@style/UserNameTextStyle"
+                ></TextView>
+
+            <TextView
+                android:layout_marginLeft="@dimen/smaller_side_margin"
+                android:id="@+id/userSurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Фамилия"
+                style="@style/UserNameTextStyle"
+                ></TextView>
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/userInfoLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/userAvatarCard"
+            android:layout_marginTop="20dp"
+            android:padding="4dp"
+            >
+
+
+            <TextView
+                android:layout_marginTop="6dp"
+                android:id="@+id/userGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Группа"
+                android:layout_gravity="center_horizontal"
+                style="@style/UserInfoTextStyle"
+               />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                >
+            
+
+
+                
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="На вашем счету "
+                    style="@style/UserInfoTextStyle"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(user.getCoins)}"
+                    style="@style/UserInfoTextStyle"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ArtCoins"
+                    style="@style/UserInfoTextStyle"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+    android:id="@+id/buttonsLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@id/userInfoLayout"
+    >
+
+</LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/buttonsLayout"
+            >
+
+        <TextView
+            android:layout_below="@id/buttonsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            style="@style/UserInfoTextStyle"
+            android:text="Задания на сегодня:"
+            ></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/buttonsLayout"
+        android:id="@+id/tasksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/completedTasksButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выполненные задания"
+                android:background="@drawable/thin_outline"
+                android:visibility="visible"
+                />
+
+            <Button
+                android:id="@+id/superUsersList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Список пользователей"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/thin_outline"
+                android:visibility="gone"
+                ></Button>
+
+            <Button
+                android:id="@+id/generalMailingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Админ меню"
+                android:layout_marginTop="10dp"
+                style="@style/RectStyle"
+                android:visibility="gone"
+                ></Button>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+
+
+
+</layout>

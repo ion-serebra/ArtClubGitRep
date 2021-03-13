@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.oshaev.artclub">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/letter_a_white"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/letter_a_white"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.home.PostPriviewActivity"></activity>
+        <activity
+            android:name=".testClasses.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.home.ShowingPostActivity"
+            android:label="@string/title_activity_showing_post"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ShowImageActivity" />
+        <activity android:name=".ui.home.AddSocialEvent" />
+        <activity
+            android:name=".ui.notifications.CompletedTasksActivity"
+            android:label="@string/title_activity_completed_tasks"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserProfilePublic"
+            android:label="@string/title_activity_user_profile_public"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".usertasks.CreatePerformanceActivity" />
+        <activity android:name=".usertasks.PerformanceActivity" />
+        <activity android:name=".usertasks.UserTaskActivity" />
+        <activity
+            android:name=".UserFragment"
+            android:label="@string/title_activity_user_fragment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CreateSendingActivity" />
+        <activity android:name=".AddChatActivity" />
+        <activity android:name=".ui.AddChatActivity" />
+        <activity android:name=".UserForAdminActivity" />
+        <activity android:name=".AllUsersListActivity" />
+        <activity android:name=".GreetingActivity" />
+        <activity android:name=".ui.home.AddSocialEventActivity" />
+        <activity android:name=".ui.notifications.UserSettingsActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".ui.MainActivity.MainActivity"
+            android:label="Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_fragment_first"
+    >
+
+    <fragment
+        android:id="@+id/navigation_fragment_first"
+        android:name="com.oshaev.artclub.ui.notifications.FirstFragment"
+        android:label="4"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_navigation_fragment_first_self"
+            app:destination="@id/navigation_fragment_first" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.oshaev.artclub.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.oshaev.artclub.ui.dashboard.ChooseChatFragment"
+        android:label="@string/title_chats"
+        tools:layout="@layout/fragment_choose_chat" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.oshaev.artclub.ui.notifications.ProfileFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user_info" />
+
+
+
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.oshaev.artclub.ui.notifications.ProfileFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user_info" />
+</navigation>

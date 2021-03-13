@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:background="@drawable/solid_half_corners_rect" app:titleTextColor="@android:color/white"
+        app:title="Авторизация"
+        >
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/letter_a_white"
+        android:transitionName="letter_a"/>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        style="@style/TextHint"
+        android:layout_margin="@dimen/activity_login_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя"
+        android:visibility="gone"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/surnameEditText"
+        style="@style/TextHint"
+        android:layout_margin="@dimen/activity_login_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Фамилия"
+        android:visibility="gone"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/groupEditText"
+        style="@style/TextHint"
+        android:layout_margin="@dimen/activity_login_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Группа"
+        android:visibility="gone"
+        ></EditText>
+
+
+
+    <EditText
+        android:layout_margin="@dimen/activity_login_margin"
+        style="@style/TextHint"
+        android:id="@+id/emailEditText"
+        android:hint="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+    ></EditText>
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        style="@style/TextHint"
+        android:layout_margin="@dimen/activity_login_margin"
+        android:hint="Пароль"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/confirmPasswordEditText"
+        style="@style/TextHint"
+        android:layout_margin="@dimen/activity_login_margin"
+        android:hint="Повторите пароль"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:visibility="gone"
+        ></EditText>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_margin="@dimen/activity_login_margin"
+        android:text="Войти"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-thin"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/solid_corners_rect"
+        ></Button>
+
+    <TextView
+        android:clickable="true"
+        android:onClick="changeForm"
+        android:id="@+id/changeLogRegTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="Регистрация"
+        android:layout_gravity="center_horizontal"
+        ></TextView>
+
+            <TextView
+                android:layout_width="166dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:visibility="invisible"></TextView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

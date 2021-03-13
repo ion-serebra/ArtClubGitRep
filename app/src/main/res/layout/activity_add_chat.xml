@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddChatActivity"
+    android:orientation="vertical"
+    android:weightSum="8"
+
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        style="@style/BottomCornersPrimaryToolbar"
+        android:background="@drawable/solid_half_corners_rect"
+        app:title="Новый чат" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ChatUserNameTextStyle"
+        android:text="Собеседники:"
+        ></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addedUsersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="98dp"
+        android:scrollbars="vertical"
+        android:layout_weight="5"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ChatUserNameTextStyle"
+        android:text="Список пользователей:"
+        ></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_weight="3"
+        android:layout_marginTop="12dp"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+    <EditText
+        android:id="@+id/chatName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название чата"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/chatDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Описание (необязательно)"
+        ></EditText>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Уровень доступа"
+            ></TextView>
+
+    <Spinner
+        android:id="@+id/accessLevelSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        ></Spinner>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="Создать"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-thin"
+        android:textStyle="bold"
+        android:background="@drawable/solid_corners_rect"
+        ></Button>
+
+</LinearLayout>

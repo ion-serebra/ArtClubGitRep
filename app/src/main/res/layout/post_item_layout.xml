@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="post"
+            type="com.oshaev.artclub.ui.home.NewsItem" />
+
+        <variable
+            name="firstImageUrl"
+            type="String" />
+
+        <variable
+            name="clickHandler"
+            type="com.oshaev.artclub.ui.home.NewsRecyclerViewAdapter.NewsAdapterClickHandler" />
+
+    </data>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="@dimen/corner_radius"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="0dp"
+        android:onClick="@{clickHandler::onPostClicked}"
+        >
+
+        <ImageView
+            android:id="@+id/postImagePreview"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:maxHeight="300dp"
+            android:layout_margin="0dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            bind:imgUrl="@{post.imageUrlStrings.get(0)}"
+            ></ImageView>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/postTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            style="@style/PostTitleTextStyle"
+            android:text="@{post.title}"
+            ></TextView>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/postTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="@style/PostTextStyle"
+            android:text="@{post.summary}"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="441"
+                android:layout_marginLeft="4dp"
+                android:layout_gravity="center_vertical"
+                ></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                >
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/comment_primary_dark_24dp"
+                android:layout_marginRight="4dp"
+                ></ImageView>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="2"
+                android:layout_marginRight="8dp"
+                ></TextView>
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/like_primary_dark_24dp"
+                android:layout_marginRight="4dp"
+                ></ImageView>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="22"
+                android:layout_marginRight="4dp"
+                ></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+</layout>

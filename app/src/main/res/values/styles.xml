@@ -1,0 +1,135 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily"><sans></sans></item>
+    </style>
+
+    <style name="BottomCornersPrimaryToolbar">
+        <item name="background">@drawable/solid_half_corners_rect</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <style name="Corners">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="UserInfoTextStyle">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@android:color/black</item>
+</style>
+
+    <style name="UserNameTextStyle">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="ChatCardTitleStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/black</item>
+
+    </style>
+
+    <style name="ChatNameTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="AppBarTitleStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="RectStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:background">@drawable/solid_corners_rect</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+
+    <style name="ChatInfoTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="ChatUserNameTextStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_marginTop">@dimen/inner_message_margin</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">@dimen/inner_message_margin</item>
+    </style>
+
+    <style name="ChatTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_marginBottom">@dimen/inner_message_margin</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">@dimen/inner_message_margin</item>
+    </style>
+
+    <style name="TextHint">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="PerformanceTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="UserTaskPropertyTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="PostTitleTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#17090D</item>
+    </style>
+
+    <style name="PostTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#17090D</item>
+    </style>
+
+    <style name="UserTaskValueTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#656565</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ImageSizeStyle">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+</resources>

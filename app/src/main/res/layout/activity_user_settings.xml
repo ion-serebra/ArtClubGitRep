@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        
+        <variable
+            name="buttonsHandler"
+            type="com.oshaev.artclub.ui.notifications.UserSettingsActivity.UserSettingsButtonsHandler" />
+
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:background="@drawable/thin_outline"
+        app:title="Настойки"
+        ></androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выйти"
+        android:textStyle="italic"
+        android:textColor="@android:color/holo_red_light"
+        android:background="@android:color/transparent"
+        android:onClick="@{buttonsHandler::onLogOutClicked}"
+        ></Button>
+
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    tools:context=".ui.home.AddSocialEventActivity"
+
+        >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@drawable/thin_outline"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_arrow_back_black_48dp"
+                android:background="@android:color/transparent"
+                />
+
+            <ImageButton
+                android:id="@+id/doneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="8dp"
+                app:srcCompat="@drawable/ic_done_grey_36dp"
+                android:background="@android:color/transparent"
+                ></ImageButton>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <LinearLayout
+        android:id="@+id/addEventVerticalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <EditText
+            android:layout_margin="6dp"
+            android:id="@+id/titleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="60sp"
+            android:textSize="30sp"
+            android:background="@android:color/transparent"
+            android:hint="Заголовок"
+            ></EditText>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            ></View>
+
+        <EditText
+            android:layout_margin="6dp"
+            android:id="@+id/summaryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="Краткое описание"
+            ></EditText>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            ></View>
+
+        <EditText
+            android:layout_margin="6dp"
+            android:id="@+id/paperEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="Полное описание"
+            ></EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="12dp"
+            android:weightSum="3"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+            <ImageView
+                android:id="@+id/addEventImage1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:visibility="invisible"
+                android:padding="4dp"
+                android:scaleType="centerCrop"
+                ></ImageView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    android:background="@drawable/circle_shape"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    ></ProgressBar>
+
+                <TextView
+                    android:id="@+id/progressText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:text="100%"
+                    android:textColor="@color/colorAccent"
+                    ></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                >
+
+            <ImageView
+                android:id="@+id/addEventImage2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:visibility="invisible"
+                android:scaleType="centerCrop"
+                ></ImageView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    android:background="@drawable/circle_shape"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    ></ProgressBar>
+
+                <TextView
+                    android:id="@+id/progressText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:text="100%"
+                    android:textColor="@color/colorAccent"
+                    ></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                >
+
+            <ImageView
+                android:id="@+id/addEventImage3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:visibility="invisible"
+                android:scaleType="centerCrop"
+                ></ImageView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    android:background="@drawable/circle_shape"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    ></ProgressBar>
+
+                <TextView
+                    android:id="@+id/progressText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:text="100%"
+                    android:textColor="@color/colorAccent"
+                    ></TextView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/addEventVerticalLayout"
+
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/classic_side_margin"
+            android:layout_marginRight="@dimen/classic_side_margin"
+            android:background="@android:color/darker_gray"
+            ></View>
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="@dimen/classic_side_margin"
+            android:layout_marginRight="@dimen/classic_side_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дополните публикацию"
+                android:textSize="20sp"
+                ></TextView>
+
+            <ImageButton
+                android:id="@+id/addImageButton"
+                android:layout_marginLeft="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_image_black_24dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_gravity="center_vertical"
+                ></ImageButton>
+
+            <ImageButton
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_30dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_gravity="center_vertical"
+                ></ImageButton>
+
+            <RadioButton
+                android:id="@+id/registrationEnableButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ></RadioButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>

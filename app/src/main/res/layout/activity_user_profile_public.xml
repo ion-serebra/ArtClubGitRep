@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exp"
+            type="String" />
+
+        <variable
+            name="maxExp"
+            type="String" />
+
+        <variable
+            name="level"
+            type="String" />
+
+        <variable
+            name="user"
+            type="com.oshaev.artclub.User" />
+
+        <variable
+            name="buttonsHandler"
+            type="com.oshaev.artclub.ui.notifications.ProfileFragment.ProfileFragmentButtonsHandler" />
+
+        <variable
+            name="progressMax"
+            type="Integer" />
+
+        <variable
+            name="progress"
+            type="Integer" />
+
+    </data>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        tools:context=".ui.notifications.ProfileFragment">
+
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+
+                >
+                <ImageButton
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:layout_margin="20dp"
+                    android:id="@+id/userAvatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add_photo_selector"
+                    android:layout_gravity="center_horizontal"
+                    ></ImageButton>
+
+
+
+                <LinearLayout
+                    android:id="@+id/userInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/userAvatar"
+                    android:layout_marginTop="20dp"
+                    android:padding="4dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Имя"
+                        style="@style/UserInfoTextStyle"
+                        ></TextView>
+
+                    <TextView
+                        android:id="@+id/userSurname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Фамилия"
+                        style="@style/UserInfoTextStyle"
+                        ></TextView>
+
+                    <TextView
+                        android:id="@+id/userGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Группа"
+                        style="@style/UserInfoTextStyle"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        >
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="@{progressMax}"
+                            android:progress="@{progress}"
+                            android:background="@drawable/solid_corners_rect"
+                            android:progressDrawable="@drawable/custom_progress"
+                            >
+                        </ProgressBar>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="@{progress.toString()+'/'+progressMax.toString()}"
+                            ></TextView>
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Уровень: "
+                            style="@style/UserInfoTextStyle"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:text="@{level}"
+                            style="@style/UserInfoTextStyle"
+                            ></TextView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ArtCoins: "
+                            style="@style/UserInfoTextStyle"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(user.getCoins)}"
+                            style="@style/UserInfoTextStyle"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/buttonsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/userAvatar"
+                    android:layout_below="@id/userInfoLayout"
+                    >
+
+                    <Button
+                        android:id="@+id/completedTasksButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Выполненные задания"
+                        android:background="@drawable/thin_outline"
+                        android:visibility="visible"
+                        />
+
+                </LinearLayout>
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@id/buttonsLayout"
+                    android:id="@+id/tasksRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layoutAnimation="@anim/layout_animation_fall_down"
+                    ></androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+
+</layout>

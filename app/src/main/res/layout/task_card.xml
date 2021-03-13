@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:padding="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:weightSum="9"
+        >
+
+    <ImageView
+        android:id="@+id/taskImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_today_primary_24dp"
+        ></ImageView>
+
+        <LinearLayout
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/taskName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Название задания"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="time"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/taskButton"
+        android:layout_alignParentRight="true"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_done_primary_24dp"
+        android:layout_centerVertical="true"
+        android:elevation="2dp"
+        android:background="@drawable/solid_corners_rect"
+        ></ImageButton>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="26dp"
+    tools:context=".UserForAdminActivity">
+
+    <ImageButton
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:layout_margin="20dp"
+        android:id="@+id/userAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_photo_selector"
+        android:layout_gravity="center_horizontal"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Имя"
+        android:layout_gravity="center_horizontal"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/userSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фамилия"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        ></TextView>
+
+    <TextView
+    android:id="@+id/userGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Группа"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="10dp"
+    ></TextView>
+
+    <TextView
+        android:id="@+id/userKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ключ"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        >
+    <TextView
+        android:id="@+id/accessLevelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="Уровень доступа:"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        ></TextView>
+
+        <Spinner
+            android:id="@+id/accessLevelSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:scrollbars="vertical"
+            android:scrollbarSize="14sp"
+            ></Spinner>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/ic_add_a_photo_pressed_64dp"
+
+        android:state_pressed="true">
+    </item>
+
+
+    <item
+        android:drawable="@drawable/ic_add_a_photo_24dp">
+    </item>
+
+</selector>

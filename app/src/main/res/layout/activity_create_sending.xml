@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateSendingActivity"
+    android:orientation="vertical"
+    android:weightSum="3"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:background="@drawable/thin_outline"
+        app:title="Рассылка"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addedUsersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_weight="2"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+    <EditText
+        android:id="@+id/chatName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Заголовок"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/chatDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Сообщение"
+        ></EditText>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Уровень доступа"
+            ></TextView>
+
+        <Spinner
+            android:id="@+id/accessLevelSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            ></Spinner>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Создать"
+        android:background="@drawable/solid_corners_rect"
+        ></Button>
+
+</LinearLayout>
